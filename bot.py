@@ -29,6 +29,19 @@ async def on_ready():
         members = '\n - '.join([member.name for member in GUILD.members])
         print(f'GUILD Members:\n - {members}')
 
+@client.event
+async def on_message(m):
+
+        if m.content.startswith('-'):
+                try:
+                        await m.delete(delay=1)
+                except Forbidden:
+                        print("No permissions to delete file")
+                except HTTPException:
+                        print("Deleting has failed for unknown reason")
+                else:
+                        print("One Message Deleted that begins with '-'")
+
 
 
 
