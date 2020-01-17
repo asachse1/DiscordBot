@@ -29,26 +29,6 @@ async def on_ready():
         members = '\n - '.join([member.name for member in GUILD.members])
         print(f'GUILD Members:\n - {members}')
 
-@client.event
-async def on_message(message):
-        #Is user message a command?
-        if (message.content.startswith("-")):
-                await asyncio.sleep(1)
-                message.delete
-        
-        #find Groovy user
-        for GUILD in client.guilds:
-                if GUILD == GUILD.name:
-                        break
-        for member in GUILD.members:
-                if member.name == "Groovy":
-                        groovyUser = member
-                        break
-
-        def is_bot(message):
-                return message.author == groovyUser
-        
-        await message.channel.purge(limit=100, check=is_bot)
 
 
 
