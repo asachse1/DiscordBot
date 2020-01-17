@@ -27,8 +27,4 @@ async def on_ready():
         print(f'Guild Members:\n - {members}')
 
 
-
-        TESTING TESTING
-        Change?
-
 client.run(token)
