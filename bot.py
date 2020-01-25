@@ -36,13 +36,10 @@ async def on_message(m):
         radioChannel = "radio-shit"
         radioName = "Groovy"
         commandChar = '-'
-        wrongChannelMsg = "HEY!!! That's the wrong channel you tard... Go to '" + radioChannel + "'"
-
+        
         #If commandChar and in the wrong channel
         if m.content.startswith(commandChar) and str(m.channel) != radioChannel:
                 try:
-                        #DM user
-                        await m.author.send(content=wrongChannelMsg)
                         #Delete message (delay=Optional Delay seconds)
                         await m.delete(delay=0)
                 except:
